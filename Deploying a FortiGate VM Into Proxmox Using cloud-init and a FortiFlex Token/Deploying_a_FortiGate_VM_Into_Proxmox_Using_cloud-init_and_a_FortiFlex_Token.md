@@ -180,14 +180,14 @@ root@pve-hp-01:~#
 8. Using the ![74ff159acb1fee7d3ab4057d65eb41f0.png](img/74ff159acb1fee7d3ab4057d65eb41f0.png) icons, click and drag the **ide2** entry to the top of the list and verify that it is **Enabled** with a checkmark **(1)**.  Ensure that the **scsi0** and **scsi1** entries are **Enabled** with checkmarks and any **net#** drives are *unchecked* **(2)**.  Click **OK** when done **(3)**.
     ![ec5111f18423504b3d681ec26af66b02.png](img/ec5111f18423504b3d681ec26af66b02.png)
 
-> [!IMPORTANT]
-> Depending on how you deployed your FortiGate VM, you might not have a **scsi1** device, and the number of **net#** interfaces you have might differ from the screenshots.
+    > [!IMPORTANT]
+    > Depending on how you deployed your FortiGate VM, you might not have a **scsi1** device, and the number of **net#** interfaces you have might differ from the screenshots.
 
 9. In the middle sidebar, choose **Console** and click the **Start Now** button.
     ![01805a2e571f4cf3fb79365187853703.png](img/01805a2e571f4cf3fb79365187853703.png)
 
-> [!NOTE]
-> For cloud-init to properly entitle the FortiGate, it must have internet access when it boots.  Typically, this is accomplished by the **port1** interface getting an address via DHCP.
+    > [!NOTE]
+    > For cloud-init to properly entitle the FortiGate, it must have internet access when it boots.  Typically, this is accomplished by the **port1** interface getting an address via DHCP.
 
 10. The VM starts to boot **(1)**, generates a serial number **(2)**, detects and formats any extra logging drives it finds **(3)**, and reboots **(4)**.
     ![0557ae272dc5f1232a0d96f3c90efc28.png](img/0557ae272dc5f1232a0d96f3c90efc28.png)
