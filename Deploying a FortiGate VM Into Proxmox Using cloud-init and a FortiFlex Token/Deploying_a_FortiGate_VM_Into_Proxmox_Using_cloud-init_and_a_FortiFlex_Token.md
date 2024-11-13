@@ -14,7 +14,7 @@ This tutorial describes how to use cloud-init, along with a FortiFlex token, to 
 [Cloud-init](https://cloud-init.io/) is the industry standard method by which cloud instances (think VMs) can be provisioned at initial boot-up.  From a FortiGate perspective, cloud-init can automatically apply 1) a supplied config, and 2) a supplied license, to a newly deployed FortiGate VM.  Fortinet's usage of cloud-init relies on the creation and use of an ISO file containing the configuration and license information.
 
 > [!NOTE]
-> Fortinet's cloud-init with a FortiFlex token uses slightly different ISO contents than Fortinet's cloud-init with a full license method.
+Fortinet's cloud-init with a FortiFlex token uses slightly different ISO contents than Fortinet's cloud-init with a full license method.
 
 ### Assumptions
 1. You already have [Proxmox](https://www.proxmox.com) installed and know the basics of accessing and using the Proxmox GUI and CLI.  This tutorial uses Proxmox v8.1.4.
@@ -26,7 +26,7 @@ This tutorial describes how to use cloud-init, along with a FortiFlex token, to 
 
 #### Creating the config and license files
 > [!NOTE]
-> There are various methods to create the config and license files and get them onto a Proxmox node.  You can create them locally on your computer and then SCP them to the node using command-line SCP or a GUI SCP client like [WinSCP](https://winscp.net).  You can also create them directly on the Proxmode node if you are comfortable with Linux and text editors such as nano or vi.  Use whichever method works best for you.
+There are various methods to create the config and license files and get them onto a Proxmox node.  You can create them locally on your computer and then SCP them to the node using command-line SCP or a GUI SCP client like [WinSCP](https://winscp.net).  You can also create them directly on the Proxmode node if you are comfortable with Linux and text editors such as nano or vi.  Use whichever method works best for you.
 
 The config file contains standard FortiOS config lines.  For the purposes of this tutorial, we simply change the hostname.  That said, you could add as many, or as few, configuration lines as desired.  Instead of a typical FortiGate VM license file, FortiFlex uses a single token value to generate entitlement.  
 
@@ -54,7 +54,7 @@ root@pve-hp-01:~#
 Use the `write-mime-multipart -o user_data config.txt license.txt` command to create a multipart MIME file from the **config.txt** and **license.txt** files.  Ensure the output file is named **user_data**.
 
 > [!TIP]
-> The **write-mime-multipart** program is part of the **cloud-image-utils** package and can be installed using the `apt-get install cloud-image-utils` command in your Proxmox node.
+The **write-mime-multipart** program is part of the **cloud-image-utils** package and can be installed using the `apt-get install cloud-image-utils` command in your Proxmox node.
 
 ```sh
 root@pve-hp-01:~# write-mime-multipart -o user_data config.txt license.txt
@@ -123,7 +123,7 @@ root@pve-hp-01:~# cp user_data config-drive/openstack/latest/
 Use the `mkisofs -R -r -o config-drive.iso config-drive/` command to create an ISO file.
 
 > [!TIP]
-> If you do not have **mkisofs** on your Proxmox node, you can install it with the `apt-get install mkisofs` command.
+If you do not have **mkisofs** on your Proxmox node, you can install it with the `apt-get install mkisofs` command.
 
 ```sh
 root@pve-hp-01:~# ls
@@ -155,7 +155,7 @@ root@pve-hp-01:~#
 ```
 
 > [!NOTE]
-> You can copy the **config-drive.iso** file to any Proxmox storage device capable of storing ISO files.
+You can copy the **config-drive.iso** file to any Proxmox storage device capable of storing ISO files.
 
 #### Deploying a FortiGate VM and attaching the config-drive.iso
 1. Deploy a base FortiGate VM as described in the **[Deploying a FortiGate VM into Proxmox](https://github.com/skwire/fortinet_proxmox/blob/6e5ea478be7b720d575c271d3c9949e210d878cf/Deploying%20a%20FortiGate%20VM%20Into%20Proxmox/Deploying_a_FortiGate_VM_Into_Proxmox.md)** tutorial.  *Ensure that you do not start the VM*.
@@ -180,14 +180,14 @@ root@pve-hp-01:~#
 8. Using the ![74ff159acb1fee7d3ab4057d65eb41f0.png](img/74ff159acb1fee7d3ab4057d65eb41f0.png) icons, click and drag the **ide2** entry to the top of the list and verify that it is **Enabled** with a checkmark **(1)**.  Ensure that the **scsi0** and **scsi1** entries are **Enabled** with checkmarks and any **net#** drives are *unchecked* **(2)**.  Click **OK** when done **(3)**.
     ![ec5111f18423504b3d681ec26af66b02.png](img/ec5111f18423504b3d681ec26af66b02.png)
 
-    > [!IMPORTANT]
-    > Depending on how you deployed your FortiGate VM, you might not have a **scsi1** device, and the number of **net#** interfaces you have might differ from the screenshots.
+> [!IMPORTANT]
+Depending on how you deployed your FortiGate VM, you might not have a **scsi1** device, and the number of **net#** interfaces you have might differ from the screenshots.
 
 9. In the middle sidebar, choose **Console** and click the **Start Now** button.
     ![01805a2e571f4cf3fb79365187853703.png](img/01805a2e571f4cf3fb79365187853703.png)
 
-    > [!NOTE]
-    > For cloud-init to properly entitle the FortiGate, it must have internet access when it boots.  Typically, this is accomplished by the **port1** interface getting an address via DHCP.
+> [!NOTE]
+For cloud-init to properly entitle the FortiGate, it must have internet access when it boots.  Typically, this is accomplished by the **port1** interface getting an address via DHCP.
 
 10. The VM starts to boot **(1)**, generates a serial number **(2)**, detects and formats any extra logging drives it finds **(3)**, and reboots **(4)**.
     ![0557ae272dc5f1232a0d96f3c90efc28.png](img/0557ae272dc5f1232a0d96f3c90efc28.png)

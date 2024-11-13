@@ -40,8 +40,8 @@ This tutorial describes how to deploy a [FortiGate](https://www.fortinet.com/pro
 
     ![86ff5487592a697e7dee66cf9da8f949.png](img/86ff5487592a697e7dee66cf9da8f949.png)
 
-    > [!TIP]
-    > You can use your browser's built in find feature to quickly find the files you need.  Use <kbd>Ctrl+F</kbd> or <kbd>CMD+F</kbd> and search for this string: `VM64_KVM`.
+> [!TIP]
+You can use your browser's built in find feature to quickly find the files you need.  Use <kbd>Ctrl+F</kbd> or <kbd>CMD+F</kbd> and search for this string: `VM64_KVM`.
 
 6. The **FGT_VM64_KVM-v7.0.14.M-build0601-FORTINET.out** file is an actual firmware file that you would use to upgrade an already instantiated FortiGate VM to v7.0.14.  The one we need is the **FGT_VM64_KVM-v7.0.14.M-build0601-FORTINET.out.kvm.zip** file.  Click the **HTTPS** link **(1)** of the **FGT_VM64_KVM-v7.0.14.M-build0601-FORTINET.out.kvm.zip** entry to download this file.
 
@@ -62,8 +62,8 @@ This tutorial describes how to deploy a [FortiGate](https://www.fortinet.com/pro
     jholmes@jholmes-laptop:~/Desktop$ 
     ```
 
-    > [!NOTE]
-    > As mentioned above, there are various methods to get a QCOW2 image onto a Proxmox node.  In the example, commandline SCP is used.  However, you could also use a GUI SCP client like [WinSCP](https://winscp.net) on Windows or [Forklift](https://binarynights.com/) on Mac.  Finally, if you have FTP set up on your Proxmox node, you could use that as an alternative.  Use whatever method you're comfortable with.
+> [!NOTE]
+As mentioned above, there are various methods to get a QCOW2 image onto a Proxmox node.  In the example, commandline SCP is used.  However, you could also use a GUI SCP client like [WinSCP](https://winscp.net) on Windows or [Forklift](https://binarynights.com/) on Mac.  Finally, if you have FTP set up on your Proxmox node, you could use that as an alternative.  Use whatever method you're comfortable with.
 
 #### Deploying the FortiGate VM into Proxmox
 
@@ -73,8 +73,8 @@ This tutorial describes how to deploy a [FortiGate](https://www.fortinet.com/pro
 
 2. In the **Create: Virtual Machine** dialog's **General** tab, change the **VM ID** value, if desired **(1)**.  Make a mental note of this ID value as you will use it later.  In the **Name** field, give the virtual machine a useful name **(2)**.  Click **Next** to move to the **OS** tab **(3)**.
 
-    > [!TIP]
-    > You might find it useful to add the FortiOS version number to the end of your virtual machine name.  As shown below, we are using FortiOS v7.0.14 in this tutorial and `-7014` has been added to the virtual machine name.
+> [!TIP]
+You might find it useful to add the FortiOS version number to the end of your virtual machine name.  As shown below, we are using FortiOS v7.0.14 in this tutorial and `-7014` has been added to the virtual machine name.
 
     ![b7d2c9eb6bf26e37e1fdee8540e43a6e.png](img/b7d2c9eb6bf26e37e1fdee8540e43a6e.png)
 
@@ -88,15 +88,15 @@ This tutorial describes how to deploy a [FortiGate](https://www.fortinet.com/pro
 
 5. In the **Disks** tab, by default, you should see an entry for one SCSI disk named **scsi0**.  Click the small trashcan icon to delete this disk **(1)**.  You should now see **No Disks** displayed.  Click **Next** to move to the **CPU** tab **(2)**.
 
-    > [!NOTE]
-    > We add disks in a later step.
+> [!NOTE]
+We add disks in a later step.
 
     ![a9fc3b744323deb664a324c6479114af.png](img/a9fc3b744323deb664a324c6479114af.png)
 
 6. For the purposes of this tutorial, we leave the **CPU** tab values at their defaults.  If you have a valid FortiGate VM license (VM02, VM04, VM08, etc), feel free to increase the values to match your license.  Click **Next** to move to the **Memory** tab **(1)**.
 
-    > [!NOTE]
-    > A few years ago, Fortinet changed their free VM license from a 14-day trial period to a permanent free trial period with limitations.  See [here](https://docs.fortinet.com/document/fortigate/7.4.3/administration-guide/441460/permanent-trial-mode-for-fortigate-vm) for more information.
+> [!NOTE]
+A few years ago, Fortinet changed their free VM license from a 14-day trial period to a permanent free trial period with limitations.  See [here](https://docs.fortinet.com/document/fortigate/7.4.3/administration-guide/441460/permanent-trial-mode-for-fortigate-vm) for more information.
 
     ![981d99bfb8f1beb0d26f1c4e5d8d89db.png](img/981d99bfb8f1beb0d26f1c4e5d8d89db.png)
 
@@ -106,8 +106,8 @@ This tutorial describes how to deploy a [FortiGate](https://www.fortinet.com/pro
 
 8. In the **Network** tab, *uncheck* the **Firewall** option **(1)** and leave the rest of the options at their defaults.  Click **Next** to move to the **Confirm** tab **(2)**.
 
-    > [!NOTE]
-    > We add more network interfaces in a later step.
+> [!NOTE]
+We add more network interfaces in a later step.
 
     ![a558af4e52efc494da133844d0ee8063.png](img/a558af4e52efc494da133844d0ee8063.png)
 
