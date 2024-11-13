@@ -13,7 +13,7 @@ This tutorial describes how to deploy a [FortiGate](https://www.fortinet.com/pro
 ### Assumptions
 1. You already have [Proxmox](https://www.proxmox.com) installed and know the basics of accessing and using the Proxmox GUI and CLI.  This tutorial uses Proxmox v8.1.5.
 2. You have [Fortinet Support Portal](https://support.fortinet.com) access and can download the appropriate firmware images.
-	1. FortiOS 7.0.14 is used for this tutorial, but the steps below can be applied to any verison.
+    1. FortiOS 7.0.14 is used for this tutorial, but the steps below can be applied to any verison.
 
 ### Workflow
 ---
@@ -127,30 +127,30 @@ jholmes@jholmes-laptop:~/Desktop$
 
 2. Highlight the Proxmox node in the left sidebar and click the **Shell** entry in the middle sidebar.  After the shell appears, type `pwd` to ensure are in the `/root` folder and then type `ls` to display the contents of the directory.  You should see the fortios.qcow2 image file we copied over earlier.
 
-	```sh
-	root@pve-hp-03:~# pwd
-	/root
-	root@pve-hp-03:~# ls
-	fortios.qcow2
-	root@pve-hp-03:~# 
-	```
+    ```sh
+    root@pve-hp-03:~# pwd
+    /root
+    root@pve-hp-03:~# ls
+    fortios.qcow2
+    root@pve-hp-03:~# 
+    ```
 
 3. To import the fortios.qcow2 image into your newly created VM, you use the `qm disk import` command:  `qm disk import <vmid> fortios.qcow2 <storage device name>`.  You will need to adjust the command to match your **vmid** created earlier and **storage device name** of choice.  By default, Proxmox creates a **local** and **local-lvm** storage device when it is installed.  In the example below, we use a **vmid** of **107** and the **local-lvm** storage device.  Take note of the disk name when the command is finished.  In the example below, it's: `unused0:local-lvm:vm-107-disk-0`
 
-	```sh
-	root@pve-hp-03:~# qm disk import 107 fortios.qcow2 local-lvm
-	importing disk 'fortios.qcow2' to VM 107 ...
-	  Logical volume "vm-107-disk-0" created.
-	transferred 0.0 B of 2.0 GiB (0.00%)
-	transferred 24.4 MiB of 2.0 GiB (1.19%)
-	transferred 50.6 MiB of 2.0 GiB (2.47%)
-	[...]
-	transferred 2.0 GiB of 2.0 GiB (98.21%)
-	transferred 2.0 GiB of 2.0 GiB (99.91%)
-	transferred 2.0 GiB of 2.0 GiB (100.00%)
-	Successfully imported disk as 'unused0:local-lvm:vm-107-disk-0'
-	root@pve-hp-03:~# 
-	```
+    ```sh
+    root@pve-hp-03:~# qm disk import 107 fortios.qcow2 local-lvm
+    importing disk 'fortios.qcow2' to VM 107 ...
+      Logical volume "vm-107-disk-0" created.
+    transferred 0.0 B of 2.0 GiB (0.00%)
+    transferred 24.4 MiB of 2.0 GiB (1.19%)
+    transferred 50.6 MiB of 2.0 GiB (2.47%)
+    [...]
+    transferred 2.0 GiB of 2.0 GiB (98.21%)
+    transferred 2.0 GiB of 2.0 GiB (99.91%)
+    transferred 2.0 GiB of 2.0 GiB (100.00%)
+    Successfully imported disk as 'unused0:local-lvm:vm-107-disk-0'
+    root@pve-hp-03:~# 
+    ```
 
 4. Select the FortiGate VM in the left sidebar **(1)** and click **Hardware** in the middle sidebar **(2)**.  Note the newly imported disk **(3)**.  At this point, it shows as **Unused Disk 0**.
 

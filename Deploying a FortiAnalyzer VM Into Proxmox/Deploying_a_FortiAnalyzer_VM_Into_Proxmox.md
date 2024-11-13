@@ -13,7 +13,7 @@ This tutorial describes how to deploy a [FortiAnalyzer](https://www.fortinet.com
 ### Assumptions
 1. You already have [Proxmox](https://www.proxmox.com) installed and know the basics of accessing and using the Proxmox GUI and CLI.  This tutorial uses Proxmox v8.1.5.
 2. You have [Fortinet Support Portal](https://support.fortinet.com) access and can download the appropriate firmware images.
-	1. We use FortiAnalyzer v7.0.14 in this tutorial.
+    1. We use FortiAnalyzer v7.0.14 in this tutorial.
 
 ### Workflow
 ---
@@ -43,7 +43,7 @@ This tutorial describes how to deploy a [FortiAnalyzer](https://www.fortinet.com
 > [!TIP]
 > You can use your browser's built in find feature to quickly find the files you need.  Use <kbd>Ctrl+F</kbd> or <kbd>CMD+F</kbd> and search for this string: `VM64_KVM`.
 
-6. The **FAZ_VM64_KVM-v7.0.11-build0595-FORTINET.out** file is an actual firmware file that you would use to upgrade an already instantiated FortiAnalyzer VM to v7.0.11.  The one we need is the **FAZ_VM64_KVM-v7.0.11-build0595-FORTINET.out.kvm.zip** file.  Click the **HTTPS** link **(1)** of the ** 	
+6. The **FAZ_VM64_KVM-v7.0.11-build0595-FORTINET.out** file is an actual firmware file that you would use to upgrade an already instantiated FortiAnalyzer VM to v7.0.11.  The one we need is the **FAZ_VM64_KVM-v7.0.11-build0595-FORTINET.out.kvm.zip** file.  Click the **HTTPS** link **(1)** of the ** 
 FAZ_VM64_KVM-v7.0.11-build0595-FORTINET.out.kvm.zip** entry to download this file.
 
 ![b8b434bb19d48a2051aa3dc37813b6df.png](img/b8b434bb19d48a2051aa3dc37813b6df.png)

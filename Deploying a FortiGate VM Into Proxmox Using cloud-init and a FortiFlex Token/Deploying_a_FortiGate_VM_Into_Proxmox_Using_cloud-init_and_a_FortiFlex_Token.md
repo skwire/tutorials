@@ -161,48 +161,48 @@ root@pve-hp-01:~#
 1. Deploy a base FortiGate VM as described in the **[Deploying a FortiGate VM into Proxmox](https://github.com/skwire/fortinet_proxmox/blob/6e5ea478be7b720d575c271d3c9949e210d878cf/Deploying%20a%20FortiGate%20VM%20Into%20Proxmox/Deploying_a_FortiGate_VM_Into_Proxmox.md)** tutorial.  *Ensure that you do not start the VM*.
 
 2. Select the newly created VM in Proxmox in the left sidebar **(1)** and then select the **Hardware** entry in the middle sidebar **(2)**.
-	![4d02426db48088329f9bab09555fba4c.png](img/4d02426db48088329f9bab09555fba4c.png)
+    ![4d02426db48088329f9bab09555fba4c.png](img/4d02426db48088329f9bab09555fba4c.png)
 
 3. Click the **Add** dropdown **(1)** and choose **CD/DVD Drive** from the options **(2)**.
-	![ab283008ba2e54836544412afb17c838.png](img/ab283008ba2e54836544412afb17c838.png)
+    ![ab283008ba2e54836544412afb17c838.png](img/ab283008ba2e54836544412afb17c838.png)
 
 4. The **Add: CD/DVD Drive** dialog appears.  Ensure the **Use CD/DVD disc image file (iso)** option is selected **(1)**.  In the **Storage** field, choose **local (2)**.  In the **ISO image** field, choose **config-drive.iso (3)**.  Click **Add** when finished **(4)**.
-	![8db25b0fcbf7cfdae1ae334e575d5677.png](img/8db25b0fcbf7cfdae1ae334e575d5677.png)
+    ![8db25b0fcbf7cfdae1ae334e575d5677.png](img/8db25b0fcbf7cfdae1ae334e575d5677.png)
 
 5. Ensure you see the newly added CD/DVD Drive.
-	![ca4eedf1e0f1ead4246bc34b038d3707.png](img/ca4eedf1e0f1ead4246bc34b038d3707.png)
+    ![ca4eedf1e0f1ead4246bc34b038d3707.png](img/ca4eedf1e0f1ead4246bc34b038d3707.png)
 
 6. In the middle sidebar, choose **Options (1)**, highlight the **Boot Order** entry **(2)** and click **Edit (3)**.
-	![48720a0c6079e6fe6a33ec36081856b8.png](img/48720a0c6079e6fe6a33ec36081856b8.png)
+    ![48720a0c6079e6fe6a33ec36081856b8.png](img/48720a0c6079e6fe6a33ec36081856b8.png)
 7. The **Edit: Boot Order** dialog appears.
-	![ea982c8b1c88cdae4899f1dd148be223.png](img/ea982c8b1c88cdae4899f1dd148be223.png)
+    ![ea982c8b1c88cdae4899f1dd148be223.png](img/ea982c8b1c88cdae4899f1dd148be223.png)
 
 8. Using the ![74ff159acb1fee7d3ab4057d65eb41f0.png](img/74ff159acb1fee7d3ab4057d65eb41f0.png) icons, click and drag the **ide2** entry to the top of the list and verify that it is **Enabled** with a checkmark **(1)**.  Ensure that the **scsi0** and **scsi1** entries are **Enabled** with checkmarks and any **net#** drives are *unchecked* **(2)**.  Click **OK** when done **(3)**.
-	![ec5111f18423504b3d681ec26af66b02.png](img/ec5111f18423504b3d681ec26af66b02.png)
+    ![ec5111f18423504b3d681ec26af66b02.png](img/ec5111f18423504b3d681ec26af66b02.png)
 
 > [!IMPORTANT]
 > Depending on how you deployed your FortiGate VM, you might not have a **scsi1** device, and the number of **net#** interfaces you have might differ from the screenshots.
 
 9. In the middle sidebar, choose **Console** and click the **Start Now** button.
-	![01805a2e571f4cf3fb79365187853703.png](img/01805a2e571f4cf3fb79365187853703.png)
+    ![01805a2e571f4cf3fb79365187853703.png](img/01805a2e571f4cf3fb79365187853703.png)
 
 > [!NOTE]
 > For cloud-init to properly entitle the FortiGate, it must have internet access when it boots.  Typically, this is accomplished by the **port1** interface getting an address via DHCP.
 
 10. The VM starts to boot **(1)**, generates a serial number **(2)**, detects and formats any extra logging drives it finds **(3)**, and reboots **(4)**.
-	![0557ae272dc5f1232a0d96f3c90efc28.png](img/0557ae272dc5f1232a0d96f3c90efc28.png)
+    ![0557ae272dc5f1232a0d96f3c90efc28.png](img/0557ae272dc5f1232a0d96f3c90efc28.png)
 
 11. After the reboot, the FortiGate VM gets to this point.
-	![b64567ff35c527e6f42208a1ef270952.png](img/b64567ff35c527e6f42208a1ef270952.png)
+    ![b64567ff35c527e6f42208a1ef270952.png](img/b64567ff35c527e6f42208a1ef270952.png)
 
 12. Allow 20-30 seconds for FortiGate to communicate with the FortiCare servers to allow proper entitlement of the VM via the FortiFlex token.  If all goes well, you should see the following FortiCare messages automatically appear, followed by another automatic reboot.
-	![4fd94719939a82f0b42adfcba156653e.png](img/4fd94719939a82f0b42adfcba156653e.png)
+    ![4fd94719939a82f0b42adfcba156653e.png](img/4fd94719939a82f0b42adfcba156653e.png)
 
 13. After the reboot, notice the prompt change to the **my-fortigate-vm** we specified in the config **(1)**.  Log in with **admin** (no password) **(2)**, change the password when requested **(3)**.
-	![d1ad3dcd22971b4f2cbadc4db400d803.png](img/d1ad3dcd22971b4f2cbadc4db400d803.png)
+    ![d1ad3dcd22971b4f2cbadc4db400d803.png](img/d1ad3dcd22971b4f2cbadc4db400d803.png)
 
 14. Issue the `get system interface physical` command (1) to see what address **port1** received from DHCP (2).
-	![4b5eaee70576781d64555bea5c49bf3f.png](img/4b5eaee70576781d64555bea5c49bf3f.png)
+    ![4b5eaee70576781d64555bea5c49bf3f.png](img/4b5eaee70576781d64555bea5c49bf3f.png)
 
 #### Verifying cloud-init operation
 There are a few commands you can use to verify cloud-init worked properly.
