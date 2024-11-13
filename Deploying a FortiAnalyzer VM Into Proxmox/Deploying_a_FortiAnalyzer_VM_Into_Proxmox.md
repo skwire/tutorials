@@ -40,7 +40,7 @@ This tutorial describes how to deploy a [FortiAnalyzer](https://www.fortinet.com
 
     ![fa6c3079ea6c37ad4609fcb2896acb16.png](img/fa6c3079ea6c37ad4609fcb2896acb16.png)
 
-[!TIP]
+> [!TIP]
 You can use your browser's built in find feature to quickly find the files you need.  Use <kbd>Ctrl+F</kbd> or <kbd>CMD+F</kbd> and search for this string: `VM64_KVM`.
 
 6. The **FAZ_VM64_KVM-v7.0.11-build0595-FORTINET.out** file is an actual firmware file that you would use to upgrade an already instantiated FortiAnalyzer VM to v7.0.11.  The one we need is the **FAZ_VM64_KVM-v7.0.11-build0595-FORTINET.out.kvm.zip** file.  Click the **HTTPS** link **(1)** of the ** 
