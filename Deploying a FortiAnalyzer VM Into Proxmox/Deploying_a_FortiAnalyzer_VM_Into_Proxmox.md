@@ -40,8 +40,8 @@ This tutorial describes how to deploy a [FortiAnalyzer](https://www.fortinet.com
 
     ![fa6c3079ea6c37ad4609fcb2896acb16.png](img/fa6c3079ea6c37ad4609fcb2896acb16.png)
 
-    > [!TIP]
-    > You can use your browser's built in find feature to quickly find the files you need.  Use <kbd>Ctrl+F</kbd> or <kbd>CMD+F</kbd> and search for this string: `VM64_KVM`.
+[!TIP]
+You can use your browser's built in find feature to quickly find the files you need.  Use <kbd>Ctrl+F</kbd> or <kbd>CMD+F</kbd> and search for this string: `VM64_KVM`.
 
 6. The **FAZ_VM64_KVM-v7.0.11-build0595-FORTINET.out** file is an actual firmware file that you would use to upgrade an already instantiated FortiAnalyzer VM to v7.0.11.  The one we need is the **FAZ_VM64_KVM-v7.0.11-build0595-FORTINET.out.kvm.zip** file.  Click the **HTTPS** link **(1)** of the ** 
 FAZ_VM64_KVM-v7.0.11-build0595-FORTINET.out.kvm.zip** entry to download this file.
@@ -63,8 +63,8 @@ FAZ_VM64_KVM-v7.0.11-build0595-FORTINET.out.kvm.zip** entry to download this fil
     jholmes@jody-laptop:~/Desktop$ 
     ```
 
-    > [!NOTE]
-    > As mentioned above, there are various methods to get a QCOW2 image onto a Proxmox node.  In the example, commandline SCP is used.  However, you could also use a GUI SCP client like [WinSCP](https://winscp.net) on Windows or [Forklift](https://binarynights.com/) on Mac.  Finally, if you have FTP set up on your Proxmox node, you could use that as an alternative.  Use whatever method you're comfortable with.
+> [!NOTE]
+> As mentioned above, there are various methods to get a QCOW2 image onto a Proxmox node.  In the example, commandline SCP is used.  However, you could also use a GUI SCP client like [WinSCP](https://winscp.net) on Windows or [Forklift](https://binarynights.com/) on Mac.  Finally, if you have FTP set up on your Proxmox node, you could use that as an alternative.  Use whatever method you're comfortable with.
 
 #### Deploying the FortiAnalyzer VM into Proxmox
 
@@ -74,8 +74,8 @@ FAZ_VM64_KVM-v7.0.11-build0595-FORTINET.out.kvm.zip** entry to download this fil
 
 2. In the **Create: Virtual Machine** dialog's **General** tab, change the **VM ID** value, if desired **(1)**.  Make a mental note of this ID value as you will use it later.  In the **Name** field, give the virtual machine a useful name **(2)**.  Click **Next** to move to the **OS** tab **(3)**.
 
-    > [!TIP]
-    > You might find it useful to add the FortiAnalyzer version number to the end of your virtual machine name.  As shown below, we are using FortiAnalyzer v7.0.11 in this tutorial and `-7011` has been added to the virtual machine name.
+> [!TIP]
+> You might find it useful to add the FortiAnalyzer version number to the end of your virtual machine name.  As shown below, we are using FortiAnalyzer v7.0.11 in this tutorial and `-7011` has been added to the virtual machine name.
  
     ![4b7a8dc360312e45ff42a5e57eb97c65.png](img/4b7a8dc360312e45ff42a5e57eb97c65.png)
 
@@ -89,18 +89,18 @@ FAZ_VM64_KVM-v7.0.11-build0595-FORTINET.out.kvm.zip** entry to download this fil
 
 5. In the **Disks** tab, by default, you should see an entry for one SCSI disk named **scsi0**.  Click the small trashcan icon to delete this disk **(1)**.  You should now see **No Disks** displayed.  Click **Next** to move to the **CPU** tab **(2)**.
 
-    > [!NOTE]
-    > We add disks in a later step.
+> [!NOTE]
+> We add disks in a later step.
 
-    ![a9fc3b744323deb664a324c6479114af.png](img/a9fc3b744323deb664a324c6479114af.png)
+![a9fc3b744323deb664a324c6479114af.png](img/a9fc3b744323deb664a324c6479114af.png)
 
 6. FortiAnalyzers are resource hungry, so change the **Cores** value to at least **2** **(1)**.  Click **Next** to move to the **Memory** tab **(2)**.
 
-    > [!TIP]
-    > For better performance, add more CPU sockets and/or cores.  The FortiAnalyzer VM is not limited on the number of CPU sockets or cores you can add.
+> [!TIP]
+> For better performance, add more CPU sockets and/or cores.  The FortiAnalyzer VM is not limited on the number of CPU sockets or cores you can add.
 
-    > [!NOTE]
-    > A few years ago, Fortinet changed their free VM license from a 14-day trial period to a permanent free trial period with limiations.  See [here](https://docs.fortinet.com/document/fortianalyzer/7.0.0/vm-trial-license-guide/200800/introduction) for more information.
+> [!NOTE]
+> A few years ago, Fortinet changed their free VM license from a 14-day trial period to a permanent free trial period with limiations.  See [here](https://docs.fortinet.com/document/fortianalyzer/7.0.0/vm-trial-license-guide/200800/introduction) for more information.
 
     ![e379e903c78b8f7350671dcc8eba8d06.png](img/e379e903c78b8f7350671dcc8eba8d06.png)
 
