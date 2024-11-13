@@ -16,7 +16,7 @@ This tutorial describes how to use cloud-init, along with a FortiFlex token, to 
 
 ### Assumptions
 1. You already have [Proxmox](https://www.proxmox.com) installed and know the basics of accessing and using the Proxmox GUI and CLI.  This tutorial uses Proxmox v8.1.4.
-2. You already know how to deploy a basic [FortiGate](https://www.fortinet.com) VM into Proxmox.  If you do not know how, please refer to the [Deploying a FortiGate VM into Proxmox](https://github.com/skwire/fortinet_proxmox/blob/6e5ea478be7b720d575c271d3c9949e210d878cf/Deploying%20a%20FortiGate%20VM%20Into%20Proxmox/Deploying_a_FortiGate_VM_Into_Proxmox.md) tutorial.  This tutorial uses FortiOS 7.0.14, but the steps below can be applied to any verison.
+2. You already know how to deploy a basic [FortiGate](https://www.fortinet.com) VM into Proxmox.  If you do not know how, please refer to the [Deploying a FortiGate VM into Proxmox](https://github.com/skwire/tutorials/blob/2eef5a04d4037b555830332ca8cd404d0125e966/Deploying%20a%20FortiGate%20VM%20Into%20Proxmox/Deploying_a_FortiGate_VM_Into_Proxmox.md) tutorial.  This tutorial uses FortiOS 7.0.14, but the steps below can be applied to any verison.
 3. You are familiar with Fortinet's [FortiFlex](https://www.fortinet.com/products/fortiflex) product, have created a Flex Entitlement, and have a valid, unused FortiFlex token ready to use.
 4. You are at least somewhat familiar with Fortinet's usage of [cloud-init](https://cloudinit.readthedocs.io/en/latest/index.html).
 
