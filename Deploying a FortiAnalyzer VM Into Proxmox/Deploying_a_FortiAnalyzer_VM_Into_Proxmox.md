@@ -77,7 +77,8 @@ As mentioned above, there are various methods to get a QCOW2 image onto a Proxmo
 > [!TIP]
 You might find it useful to add the FortiAnalyzer version number to the end of your virtual machine name.  As shown below, we are using FortiAnalyzer v7.0.11 in this tutorial and `-7011` has been added to the virtual machine name.
  
-    ![4b7a8dc360312e45ff42a5e57eb97c65.png](img/4b7a8dc360312e45ff42a5e57eb97c65.png)
+> ![4b7a8dc360312e45ff42a5e57eb97c65.png](img/4b7a8dc360312e45ff42a5e57eb97c65.png)
+
 
 3. In the **OS** tab, select the **Do not use any media** option **(1)**.  Leave the **Type** and **Version** options at their defaults of **Linux** and **6.x - 2.6 Kernel**, respectively **(2), (3)**.  Click **Next** to move to the **System** tab **(4)**.
 
@@ -100,23 +101,23 @@ We add disks in a later step.
 For better performance, add more CPU sockets and/or cores.  The FortiAnalyzer VM is not limited on the number of CPU sockets or cores you can add.
 
 > [!NOTE]
-A few years ago, Fortinet changed their free VM license from a 14-day trial period to a permanent free trial period with limiations.  See [here](https://docs.fortinet.com/document/fortianalyzer/7.0.0/vm-trial-license-guide/200800/introduction) for more information.
+A few years ago, Fortinet changed their free VM license from a 14-day trial period to a permanent free trial period with limitations.  See [here](https://docs.fortinet.com/document/fortianalyzer/7.0.0/vm-trial-license-guide/200800/introduction) for more information.
 
-    ![e379e903c78b8f7350671dcc8eba8d06.png](img/e379e903c78b8f7350671dcc8eba8d06.png)
+> ![e379e903c78b8f7350671dcc8eba8d06.png](img/e379e903c78b8f7350671dcc8eba8d06.png)
 
 7. Increase the **Memory (MiB)** field to at least **8192**.  Click **Next** to move to the **Network** tab **(2)**.
 
 > [!TIP]
 For better performance, add more memory.  The FortiAnalyzer VM is not limited on the amount of memory you can use.
 
-    ![133aa1fb6d1b3e84b3ecdb46dab8968a.png](img/133aa1fb6d1b3e84b3ecdb46dab8968a.png)
+> ![133aa1fb6d1b3e84b3ecdb46dab8968a.png](img/133aa1fb6d1b3e84b3ecdb46dab8968a.png)
 
 8. In the **Network** tab, *uncheck* the **Firewall** option **(1)** and leave the rest of the options at their defaults.  Click **Next** to move to the **Confirm** tab **(2)**.
 
 > [!NOTE]
 We add more network interfaces in a later step.
 
-    ![a558af4e52efc494da133844d0ee8063.png](img/a558af4e52efc494da133844d0ee8063.png)
+> ![a558af4e52efc494da133844d0ee8063.png](img/a558af4e52efc494da133844d0ee8063.png)
 
 9. In the **Confirm** tab, ensure the **Start after created** option is *unchecked* **(1)**.  Again, make a mental note of the **vmid** value **(2)** as you will use it later.  Click **Finish** to build the VM **(3)**.
 
